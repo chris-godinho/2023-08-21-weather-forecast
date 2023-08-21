@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>Weather 5-Day Forecast</title>
+  </head>
+  <body class="p-4 bg-dark text-light">
+    <div class="container text-center p-1 mb-5 bg-primary text-white">
+      <div class="row">
+        <div class="col-12">
+          <h1>Weather Dashboard</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row gx-5">
+        <div class="col-3">
+          <div class="container">
+            <h5>Search for a city:</h5>
+            <div class="row mt-3 mb-3">
+              <input class="form-control" id="city-search-form" placeholder="Enter city name here">
+            </div>
+            <div class="row mb-3">
+              <button type="button" id="search-button" class="btn btn-primary">
+                Search
+              </button>
+            </div>
+          </div>
+          <hr>
+          <div class="container">
+            <div class="row mb-3">
+              <button type="button" class="btn btn-secondary">
+                History 1
+              </button>
+            </div>
+            <div class="row mb-3">
+              <button type="button" class="btn btn-secondary">
+                History 2
+              </button>
+            </div>
+            <div class="row mb-3">
+              <button type="button" class="btn btn-secondary">
+                History 3
+              </button>
+            </div>
+            <div class="row mb-3">
+              <button type="button" class="btn btn-secondary">
+                History 4
+              </button>
+            </div>
+            <div class="row mb-3">
+              <button type="button" class="btn btn-secondary">
+                History 5
+              </button>
+            </div>
+            <div class="row mb-3">
+              <button type="button" class="btn btn-secondary">
+                History 6
+              </button>
+            </div>
+            <div class="row mb-3">
+              <button type="button" class="btn btn-secondary">
+                History 7
+              </button>
+            </div>
+            <div class="row mb-3">
+              <button type="button" class="btn btn-secondary">
+                History 8
+              </button>
+            </div>
+            <div class="row mb-3">
+              <button type="button" class="btn btn-secondary">
+                History 9
+              </button>
+            </div>
+            <div class="row mb-3">
+              <button type="button" class="btn btn-secondary">
+                History 10
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="row border mb-5">
+            <div class="container p-3">
+                <h2 id="city-name">City Name (date) (icon)</h2>
+                <p>Temp: XX.XX°F</p>
+                <p>Wind: X.XX MPH</p>
+                <p>Humidity: XX %</p>
+            </div>
+          </div>
+          <!-- <div class="container p-0"> -->
+            <div class="row">
+              <h4>5-Day Forecast:</h4>
+            </div>
+            <div id="forecast-box" class="container mt-3 text-dark">
+              <div class="row gx-5">
+                <div class="col m-3 pt-3 border bg-info">
+                  <p>XX/XX/XXXX</p>
+                  <p>ICON</p>
+                  <p>Temp: XX.XX°F</p>
+                  <p>Wind: X.XX MPH</p>
+                  <p>Humidity: XX %</p>
+                </div>
+                <div class="col m-3 pt-3 border bg-info">
+                  <p>XX/XX/XXXX</p>
+                  <p>ICON</p>
+                  <p>Temp: XX.XX°F</p>
+                  <p>Wind: X.XX MPH</p>
+                  <p>Humidity: XX %</p>
+                </div>
+                <div class="col m-3 pt-3 border bg-info">
+                  <p>XX/XX/XXXX</p>
+                  <p>ICON</p>
+                  <p>Temp: XX.XX°F</p>
+                  <p>Wind: X.XX MPH</p>
+                  <p>Humidity: XX %</p>
+                </div>
+                <div class="col m-3 pt-3 border bg-info">
+                  <p>XX/XX/XXXX</p>
+                  <p>ICON</p>
+                  <p>Temp: XX.XX°F</p>
+                  <p>Wind: X.XX MPH</p>
+                  <p>Humidity: XX %</p>
+                </div>
+                <div class="col m-3 pt-3 border bg-info">
+                  <p>XX/XX/XXXX</p>
+                  <p>ICON</p>
+                  <p>Temp: XX.XX°F</p>
+                  <p>Wind: X.XX MPH</p>
+                  <p>Humidity: XX %</p>
+                </div>
+              </div>
+            </div>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/scripts/script.js"></script>
+  </body>
+</html>
