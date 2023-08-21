@@ -14,7 +14,6 @@ var historyButton7 = document.getElementById("history-7");
 var historyButton8 = document.getElementById("history-8");
 var historyButton9 = document.getElementById("history-9");
 
-//
 var cityName = "";
 var cityHistory = [];
 var fetchLatitude = 0;
@@ -73,7 +72,6 @@ function historySearch9() {
 }
 
 function getWeatherData() {
-  // TODO: Parse city name and replace " " with "_"
   var geoRequestUrl = "";
   var weatherRequestUrl = "";
   if (historySearch < 10) {
@@ -171,7 +169,7 @@ function getWeatherData() {
 
 getWeatherData();
 
-// Add event listener to search button
+// Add event listener to buttons
 searchButton.addEventListener("click", getWeatherData);
 historyButton0.addEventListener("click", historySearch0);
 historyButton1.addEventListener("click", historySearch1);
