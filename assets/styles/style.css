@@ -26,3 +26,7 @@ h1, h2, h4 {
 #day1-icon, #day2-icon, #day3-icon, #day4-icon, #day5-icon {
   height: 60px;
 }
+
+#error-alert, #history-0, #history-1, #history-2, #history-3, #history-4, #history-5, #history-6, #history-7, #history-8, #history-9 {
+  display: none;
+}
