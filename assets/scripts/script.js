@@ -87,7 +87,7 @@ function getWeatherData() {
     }
   }
   document.getElementById("city-search-form").value = "";
-  geoRequestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=" + apiKey;
+  geoRequestUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=" + apiKey;
   fetch(geoRequestUrl)
     .then(function (response) {
       return response.json();
@@ -112,7 +112,7 @@ function getWeatherData() {
         } else {
           firstQuery = true;
         }
-        weatherRequestUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=" + fetchLatitude + "&lon=" + fetchLongitude + "&appid=" + apiKey + "&units=imperial";
+        weatherRequestUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + fetchLatitude + "&lon=" + fetchLongitude + "&appid=" + apiKey + "&units=imperial";
         return fetch(weatherRequestUrl);
       }
     })
