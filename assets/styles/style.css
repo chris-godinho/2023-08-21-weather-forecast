@@ -18,3 +18,11 @@ h1, h2, h4 {
   font-size: 0.9em;
   font-weight: bold;
 }
+
+#city-icon {
+  height: 80px;
+}
+
+#day1-icon, #day2-icon, #day3-icon, #day4-icon, #day5-icon {
+  height: 60px;
+}
