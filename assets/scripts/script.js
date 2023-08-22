@@ -14,6 +14,7 @@ var historyButton7 = document.getElementById("history-7");
 var historyButton8 = document.getElementById("history-8");
 var historyButton9 = document.getElementById("history-9");
 
+// Declare other variables
 var cityName = "";
 var cityHistory = [];
 var fetchLatitude = 0;
@@ -21,6 +22,7 @@ var fetchLongitude = 0;
 var firstQuery = false;
 var historySearch = 10;
 
+// Direct history buttons to respective items in localStorage
 function historySearch0() {
     historySearch = 0;
     getWeatherData();
@@ -74,42 +76,54 @@ function historySearch9() {
 function getWeatherData() {
   var geoRequestUrl = "";
   var weatherRequestUrl = "";
+
+  // Check if a history button was pressed
   if (historySearch < 10) {
     cityName = document.getElementById("history-" + historySearch).innerHTML;
   } else {
     if (firstQuery) {
+      // Capture and parse city name for URL
       cityName = document.getElementById("city-search-form").value;
       cityName = cityName.replaceAll(' ', '_');
     } else {
+      // Set Toronto as default city for when application is first accessed
       cityName = "Toronto";
     }
   }
+  // Empty text box
   document.getElementById("city-search-form").value = "";
+  // Find latitude and longitude for entered city
   geoRequestUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=" + apiKey;
   fetch(geoRequestUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
+      // Check if query was successful
       if (data.length === 0) {
         return false;
       } else {
+        // Pull relevant data from response
         fetchLatitude = data[0].lat;
         fetchLongitude = data[0].lon;
         cityName = cityName.charAt(0).toUpperCase() + cityName.slice(1);
         cityName = cityName.replaceAll('_', ' ');
+        // Check if there are past searches in localStorage
         if (localStorage.hasOwnProperty("city-history")) {
             cityHistory = localStorage.getItem("city-history").split(",");
         }
         if (firstQuery) {
+          // Add last search to history and delete oldest search if necessary
             cityHistory.splice(0, 0, cityName);
           if (cityHistory.length > 10) {
             cityHistory.splice(10, 1);
           }
+          // Upload history to localStorage
           localStorage.setItem("city-history", cityHistory);
         } else {
           firstQuery = true;
         }
+        // Get weather data for the latitude and longitude provided
         weatherRequestUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + fetchLatitude + "&lon=" + fetchLongitude + "&appid=" + apiKey + "&units=imperial";
         return fetch(weatherRequestUrl);
       }
@@ -123,8 +137,10 @@ function getWeatherData() {
     })
     .then(function (data) {
       if (!data) {
+        // Display error message if query isn't valid
         document.getElementById("error-alert").style.display = "block";
       } else {
+        // Add received data to relevant elements
         document.getElementById("error-alert").style.display = "none";
         document.getElementById("city-name").innerHTML = cityName + " (" + dayjs().format('M/D/YYYY') + ")";
         document.getElementById("city-icon").setAttribute("src", "https://openweathermap.org/img/wn/" + data.list[0].weather[0].icon + "@2x.png");
@@ -156,6 +172,7 @@ function getWeatherData() {
         document.getElementById("day5-temp").innerHTML = "Temp: " + data.list[39].main.temp + " °F";
         document.getElementById("day5-wind").innerHTML = "Wind: " + data.list[39].wind.speed + " MPH";
         document.getElementById("day5-humi").innerHTML = "Humidity: " + data.list[39].main.humidity + "%";
+        // Populate history with past searches
         if (cityHistory.length > 0) {
           for (i = 0; i < cityHistory.length; i++) {
               document.getElementById("history-" + i).innerHTML = cityHistory[i];
