@@ -14,7 +14,7 @@ A simple application for obtaining the weather forecast for a given city.
 
 ## Installation
 
-No installation is necessary for this application. A live page can be accessed at <https://kristbg.github.io/travelling-thespian/>.
+No installation is necessary for this application. A live page can be accessed at <https://kristbg.github.io/2023-08-21-weather-forecast/>.
 
 ## How can I Contribute?
 
